@@ -1,27 +1,28 @@
 # Simple Oscilloscope
 
-This script draws a graph based on Excel (.xls) files, which are loaded using the `ExcelData` class constructor. Note that this script was created quickly and require A LOT OF improvements.
+This script draws a graph based on Excel (.xls) files, which are loaded using the `ExcelData` class constructor. Note that this script was created quickly and require improvements.
+
+## Installation
+Make sure to install required packages using the following commands:
+```bash
+git clone https://github.com/Muszchrom/PyOscilloscope.git
+pip install xlrd  # for working with .xls files
+pip install matplotlib  # for graphs 
+```
+In case tkinter is not installed:
+```bash
+pip install tkinter  # for user interface
+```
 
 ## Configuration
-
-1. Update the list of files and the path in the `ExcelData` class.
-2. Adjust the location of cells as needed.
+1. Open `main.py` file and edit parameters to your needs, based on their descriptions.
 
 ## Running the Application
-
-Make sure to install the required packages using the following commands:
-
+After installing dependencies and configuring main file, run the script:
 ```bash
-pip install tkinter # should be installed by default
-pip install xlrd  # for working with .xls files
-pip install matplotlib
-```
-After installing the dependencies, run the script:
-```bash
-py file.py
+py main.py
 ```
 
-and run `py file.py`
 ## Controls
 * Use the keys `1`, `2`, `3`, `4` to control cursors. 
 * Switch the `checkbox` to display Lissajous graphs. 
