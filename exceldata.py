@@ -20,7 +20,7 @@ class ExcelData:
             "2k-60.xls",
             "2k-70.xls"
         ]
-        self.path = r"C:\Users\altai\Desktop\IZI 5\metrologia\stuff\\"
+        self.path = r"C:\Users\altai\Desktop\IZI 5\metrologia\stuff" + "\\"
 
     def get_file_names(self):
         return self.excel_files
