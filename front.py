@@ -5,10 +5,11 @@ from exceldata import ExcelData
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib import pyplot as plt
 
+
 class Front(tk.Tk):
-    def __init__(self, *args, **kwargs):
-        tk.Tk.__init__(self, *args, **kwargs)
-        self.excInst = ExcelData()
+    def __init__(self, path, files, data_settings, *args, **kwargs):
+        super().__init__()
+        self.excInst = ExcelData(path, files, data_settings)
 
         # Setup containers
         self.container = tk.Frame(self)
@@ -62,6 +63,11 @@ class Front(tk.Tk):
         self.canvas.get_tk_widget().pack(side="left")
 
         self.draw_grid()
+        self.protocol("WM_DELETE_WINDOW", self.__on_close)
+
+    def __on_close(self):
+        plt.close('all')
+        self.destroy()
 
     def on_checkbox(self):
         if self.checkbox_checked.get():
@@ -141,5 +147,3 @@ class Front(tk.Tk):
         self.draw_grid()
         self.draw_h_v_lines()
 
-
-Front().mainloop()
